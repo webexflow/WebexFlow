@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: #111820;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Editorial studio borders and cards */
+.editorial-card-light {
+  background-color: #FFFFFF;
+  border: 1px solid #D9D8D2;
+}
+
+.editorial-card-dark {
+  background-color: #18212C;
+  border: 1px solid #263746;
+}
+
+/* Subtle architectural grid background */
+.tech-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.tech-grid-pattern-light {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(17, 24, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 24, 32, 0.04) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #111820;
+}
+::-webkit-scrollbar-thumb {
+  background: #263746;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5276D9;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

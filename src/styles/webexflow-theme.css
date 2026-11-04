@@ -1,0 +1,127 @@
+/* ==========================================================================
+   WEBEX_FLOW DEDICATED THEME STYLESHEET
+   Strictly scoped to the main Webex_Flow agency website via .webexflow-site
+   DO NOT MODIFY OR LEAK INTO THE SIX DEMO WEBSITES
+   ========================================================================== */
+
+.webexflow-site {
+  /* Webex_Flow Official Palette */
+  --wf-aubergine: #17152B;       /* Deep Aubergine - major dark sections */
+  --wf-aubergine-dark: #110F20;  /* Deep Aubergine deepest */
+  --wf-plum: #292344;            /* Royal Plum - secondary dark sections */
+  --wf-plum-light: #342D54;      /* Royal Plum light cards */
+  --wf-lavender: #F3F0F8;        /* Soft Lavender - light sections */
+  --wf-lavender-light: #FAF8FD;  /* Soft Lavender card background */
+  --wf-lavender-dark: #E7E2F0;   /* Soft Lavender border/divider */
+  --wf-violet: #8B72D9;          /* Electric Violet - primary CTAs & active states */
+  --wf-violet-hover: #7A61C8;    /* Electric Violet hover */
+  --wf-violet-subtle: rgba(139, 114, 217, 0.14);
+  --wf-teal: #45C6B0;            /* Mint Teal - secondary accents */
+  --wf-teal-hover: #3BB09C;      /* Mint Teal hover */
+  --wf-teal-subtle: rgba(69, 198, 176, 0.14);
+  --wf-white: #FFFFFF;           /* White text / card */
+  --wf-dark-text: #25213A;       /* Dark Text for light sections */
+  --wf-muted-text: #A9A3BA;      /* Muted Text for dark sections */
+  --wf-muted-light: #6C667E;     /* Muted Text for light sections */
+  --wf-border-subtle: #DED9E9;   /* Subtle Borders for light sections */
+  --wf-border-dark: #352D57;     /* Subtle Borders for dark sections */
+  --wf-border-dark-subtle: rgba(255, 255, 255, 0.08);
+
+  background-color: var(--wf-aubergine);
+  color: var(--wf-white);
+}
+
+/* Scoped Tech Grid Patterns */
+.webexflow-site .tech-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(139, 114, 217, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 114, 217, 0.06) 1px, transparent 1px);
+}
+
+.webexflow-site .tech-grid-pattern-light {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(37, 33, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 33, 58, 0.05) 1px, transparent 1px);
+}
+
+/* Ambient Animated Glows */
+@keyframes wf-pulse-glow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1) translate(0px, 0px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08) translate(15px, -10px);
+  }
+}
+
+@keyframes wf-float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.webexflow-site .wf-glow-violet {
+  animation: wf-pulse-glow 9s ease-in-out infinite;
+}
+
+.webexflow-site .wf-float {
+  animation: wf-float-slow 6s ease-in-out infinite;
+}
+
+/* Scoped Focus Rings */
+.webexflow-site input:focus,
+.webexflow-site select:focus,
+.webexflow-site textarea:focus {
+  outline: none;
+  border-color: var(--wf-violet) !important;
+  box-shadow: 0 0 0 3px var(--wf-violet-subtle) !important;
+}
+
+/* Custom Scrollbar for Webex_Flow */
+.webexflow-site ::-webkit-scrollbar-thumb {
+  background: var(--wf-plum);
+}
+.webexflow-site ::-webkit-scrollbar-thumb:hover {
+  background: var(--wf-violet);
+}
+
+/* Elevated Scoped Shadows */
+.webexflow-site .wf-shadow-elevated {
+  box-shadow: 0 10px 30px -10px rgba(23, 21, 43, 0.12), 0 4px 12px -4px rgba(23, 21, 43, 0.06);
+}
+
+.webexflow-site .wf-shadow-elevated-dark {
+  box-shadow: 0 20px 40px -15px rgba(10, 8, 20, 0.6);
+}
+
+.webexflow-site .wf-shadow-violet {
+  box-shadow: 0 8px 24px -6px rgba(139, 114, 217, 0.35);
+}
+
+/* Link Underline Animations */
+.webexflow-site .wf-nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.webexflow-site .wf-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--wf-violet);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.webexflow-site .wf-nav-link:hover::after {
+  width: 100%;
+}
